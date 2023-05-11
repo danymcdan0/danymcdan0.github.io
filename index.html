@@ -12,31 +12,39 @@
 
     <!-- links to external resources -->
     <link href="profileStyles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red Hat Text">
 </head>
 
 <body class="container">
-    <nav>
-        <ul class="flex-container">
-            <li><a href="index.html">Go to profile</a></li>
-            <li><a href="projects.html">Go to projects</a></li>
-            <li><a href="https://www.linkedin.com/in/danyal-saleh-99506824b/" target="_blank">My LinkedIn</a></li>
-        </ul>
+    <nav class="flex-container">
+        <p class="pipes">||</p>
+        <a class="navi" href="index.html"><span class="arrownav">></span> Profile</a>
+        <p class="pipes">||</p>
+        <a class="navi" href="projects.html"><span class="arrownav">></span>Projects</a>
+        <p class="pipes">||</p>
+        <a class="navi" href="https://www.linkedin.com/in/danyal-saleh-99506824b/" target="_blank"><span class="arrownav">></span>LinkedIn</a>
+        <p class="pipes">||</p>
     </nav>
 
     <header>
-        <h1>My Profile</h1>
-        <h2>My Name</h2>
-        <p>An <em>awesome</em> website <strong>demo</strong>!</p>
-        <img src="images/koi.gif" alt="A profile picture" width="200px">
+        <h1>>Danyal Saleh</h1>
+        <img src="images/Me_LinkedIn.jpg" alt="A profile picture" width="200px">
     </header>
-    
+
+    <section class="">
+        <p>
+            <span class="arrow">></span>Aspiring game developer recently graduated in MSc. Game Development. Currently working with Sparta as a Junior C# Developer.
+        </p>
+
+    </section>
+
     <section class="box-1">
         <h3>My Skills</h3>
         <p>Agile and scrum methodology</p>
         <p>Cooking up some sweet code</p>
     </section>
     
-    <section class="box-2 floating-box">
+    <section class="box-1">
         <h3>My Hobbies</h3>
         <ul>
             <li>Game development</li>
@@ -54,16 +62,6 @@
             <li>Get back to p2</li>
         </ol>
     </section>
-    
-    <footer class="box-2">
-        <h4>My Searchbar</h4>
-        <!-- <form action="mysite.com/api/customers" method="POST"></form> -->
-        
-        <form action="https://bbc.co.uk/search" target="_blank">
-            <label for="search">Search</label>
-            <input type="text" id="search" name="q">
-            <input type="submit" value="Search">
-        </form>
         
         <small>Copyright &#169; Sparta Global 2023 <cite>by D. Saleh</cite></small>  
     </footer>
