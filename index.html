@@ -30,6 +30,12 @@
                 </div>
             </div>
           </div>
+          <div class="container">
+            <div class="box"><div>one</div></div>
+            <div class="box"><div>two</div></div>
+            <div class="box"><div>three</div></div>
+            <div class="box"><div>four</div></div>
+          </div>    
     </body>
     <script>
         function checkA() {
@@ -41,13 +47,11 @@
         function checkC() {
             console.log("outer");
         }
-        
+
         const title = document.getElementById("Title");
         const innerPlanet = document.getElementById("inner-planet");
         const midPlanet = document.getElementById("mid-planet");
         const outerPlanet = document.getElementById("outer-planet");
-
-        //TODO -> When hovering over different planets the fading will glitch -> One solution is to [wait for a fade to complete before the next] or to [stop a fade completely]
 
         innerPlanet.onmouseover = function () {
             var opacity = 1;
@@ -57,17 +61,17 @@
                   title.style.opacity = opacity;
                } else {
                   clearInterval(interval);
-                  part2();
+                  textFadeIn("Game Dev.");
                }
             }, 30);
-            function part2() {
-                title.innerHTML = "Game Dev."
-                var interval2 = setInterval(function() {
+            function textFadeIn(t) {
+                title.innerHTML = t;
+                var interval = setInterval(function() {
                 if (opacity < 1) {
                     opacity += 0.1;
                     title.style.opacity = opacity;
                 } else {
-                    clearInterval(interval2);
+                    clearInterval(interval);
                     }
                 }, 30);
             }
@@ -81,17 +85,17 @@
                   title.style.opacity = opacity;
                } else {
                   clearInterval(interval);
-                  part2();
+                  textFadeIn("Experience.");
                }
             }, 30);
-            function part2() {
-                title.innerHTML = "Experience."
-                var interval2 = setInterval(function() {
+            function textFadeIn(t) {
+                title.innerHTML = t;
+                var interval = setInterval(function() {
                 if (opacity < 1) {
                     opacity += 0.1;
                     title.style.opacity = opacity;
                 } else {
-                    clearInterval(interval2);
+                    clearInterval(interval);
                     }
                 }, 30);
             }
@@ -105,20 +109,22 @@
                   title.style.opacity = opacity;
                } else {
                   clearInterval(interval);
-                  part2();
+                  textFadeIn("Projects.");
                }
             }, 30);
-            function part2() {
-                title.innerHTML = "Projects."
-                var interval2 = setInterval(function() {
+            
+            function textFadeIn(t) {
+                title.innerHTML = t;
+                var interval = setInterval(function() {
                 if (opacity < 1) {
                     opacity += 0.1;
                     title.style.opacity = opacity;
                 } else {
-                    clearInterval(interval2);
+                    clearInterval(interval);
                     }
                 }, 30);
             }
         }
+        
     </script>
 </html>
