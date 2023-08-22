@@ -3,23 +3,30 @@
     <head>
         <title>DS</title>
         <link href="profileStyles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="center-title">
+            <h1 class="blinker">></h1>
+            <h1 class="fading-header" id="Title">My Universe.</h1>
+        </div>
         <div id="circle-orbit-container">
             <div class="child">
                 <!-- Circles closest to the central point -->
                 <div id="inner-orbit">
-                <div onclick="checkA()" class="inner-orbit-cirlces"></div>
+                <div id="inner-planet" onclick="checkA()" class="inner-orbit-circles"></div>
                 </div>
             
                 <!-- Circles second closest to the central point -->
                 <div id="middle-orbit">
-                <div onclick="checkB()" class="middle-orbit-cirlces"></div>
+                <div id="mid-planet" onclick="checkB()" class="middle-orbit-circles"></div>
                 </div>
             
                 <!-- Circles furthest away to the central point -->
                 <div id="outer-orbit">
-                <div onclick="checkC()" class="outer-orbit-cirlces"></div>
+                <div id="outer-planet" onclick="checkC()" class="outer-orbit-circles"></div>
                 </div>
             </div>
           </div>
@@ -33,6 +40,85 @@
         }
         function checkC() {
             console.log("outer");
+        }
+        
+        const title = document.getElementById("Title");
+        const innerPlanet = document.getElementById("inner-planet");
+        const midPlanet = document.getElementById("mid-planet");
+        const outerPlanet = document.getElementById("outer-planet");
+
+        //TODO -> When hovering over different planets the fading will glitch -> One solution is to [wait for a fade to complete before the next] or to [stop a fade completely]
+
+        innerPlanet.onmouseover = function () {
+            var opacity = 1;
+            var interval = setInterval(function() {
+               if (opacity > 0) {
+                  opacity -= 0.1;
+                  title.style.opacity = opacity;
+               } else {
+                  clearInterval(interval);
+                  part2();
+               }
+            }, 30);
+            function part2() {
+                title.innerHTML = "Game Dev."
+                var interval2 = setInterval(function() {
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    title.style.opacity = opacity;
+                } else {
+                    clearInterval(interval2);
+                    }
+                }, 30);
+            }
+        }
+
+        midPlanet.onmouseover = function () {
+            var opacity = 1;
+            var interval = setInterval(function() {
+               if (opacity > 0) {
+                  opacity -= 0.1;
+                  title.style.opacity = opacity;
+               } else {
+                  clearInterval(interval);
+                  part2();
+               }
+            }, 30);
+            function part2() {
+                title.innerHTML = "Experience."
+                var interval2 = setInterval(function() {
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    title.style.opacity = opacity;
+                } else {
+                    clearInterval(interval2);
+                    }
+                }, 30);
+            }
+        }
+
+        outerPlanet.onmouseover = function () {
+            var opacity = 1;
+            var interval = setInterval(function() {
+               if (opacity > 0) {
+                  opacity -= 0.1;
+                  title.style.opacity = opacity;
+               } else {
+                  clearInterval(interval);
+                  part2();
+               }
+            }, 30);
+            function part2() {
+                title.innerHTML = "Projects."
+                var interval2 = setInterval(function() {
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    title.style.opacity = opacity;
+                } else {
+                    clearInterval(interval2);
+                    }
+                }, 30);
+            }
         }
     </script>
 </html>
