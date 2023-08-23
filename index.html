@@ -12,51 +12,52 @@
             <h1 class="blinker">></h1>
             <h1 class="fading-header" id="Title">My Universe.</h1>
         </div>
+
         <div id="circle-orbit-container">
             <div class="child">
-                <!-- Circles closest to the central point -->
                 <div id="inner-orbit">
                     <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')" class="inner-orbit-circles"></div>
                 </div>
             
-                <!-- Circles second closest to the central point -->
                 <div id="middle-orbit">
                     <div id="mid-planet" onclick="midClick()" onmouseenter="planetMouseOver(this, 'Experience.')" class="middle-orbit-circles"></div>
                 </div>
             
-                <!-- Circles furthest away to the central point -->
                 <div id="outer-orbit">
                     <div id="outer-planet" onclick="outerClick()" onmouseenter="planetMouseOver(this, 'Projects.')" class="outer-orbit-circles"></div>
                 </div>
             </div>
           </div>
+
           <div id="InnerButtons" class="container">
-            <button class="button">
-                <span class="button-text">Game Dev</span>
+            <button class="button" style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Game Dev</span>
                 <div class="fill-container"></div>
               </button>
-              <button class="button">
-                <span class="button-text">More</span>
+              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
                 <div class="fill-container"></div>
               </button>
           </div>
+
           <div id="MidButtons" class="container">
-            <button class="button">
-                <span class="button-text">Experience</span>
+            <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Experience</span>
                 <div class="fill-container"></div>
               </button>
-              <button class="button">
-                <span class="button-text">More</span>
+              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
                 <div class="fill-container"></div>
               </button>
           </div>
+
           <div id="OuterButtons" class="container">
-            <button class="button">
-                <span class="button-text">Projects</span>
+            <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Projects</span>
                 <div class="fill-container"></div>
               </button>
-              <button class="button">
-                <span class="button-text">More</span>
+              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
                 <div class="fill-container"></div>
               </button>
           </div>
@@ -68,23 +69,50 @@
         const outerButtons = document.getElementById("OuterButtons");
 
         innerButtons.style.display = 'none';
+        innerButtons.style.opacity = 0;
         midButtons.style.display = 'none';
+        midButtons.style.opacity = 0;
         outerButtons.style.display = 'none';
+        outerButtons.style.opacity = 0;
 
         function innerClick() {
-            innerButtons.style.display = 'flex';
-            midButtons.style.display = 'none';
-            outerButtons.style.display = 'none';
+            buttonHandler(innerButtons, midButtons, outerButtons)
         }
+
         function midClick() {
-            innerButtons.style.display = 'none';
-            midButtons.style.display = 'flex';
-            outerButtons.style.display = 'none';
+            buttonHandler(midButtons, innerButtons, outerButtons)
         }
+
         function outerClick() {
-            innerButtons.style.display = 'none';
-            midButtons.style.display = 'none';
-            outerButtons.style.display = 'flex';
+            buttonHandler(outerButtons, innerButtons, midButtons)
+        }
+
+        function buttonHandler(focus, outA, outB) {
+            var opacity = 1;
+                var interval = setInterval(function() {
+                if (opacity > 0) {
+                    opacity -= 0.1;
+                    outA.style.opacity = opacity;
+                    outB.style.opacity = opacity;
+                } else {
+                    clearInterval(interval);
+                    outA.style.display = 'none';
+                    outB.style.display = 'none';
+                    buttonFadeIn();
+                }
+                }, 30);
+                
+                function buttonFadeIn() {
+                    focus.style.display = 'flex';
+                    var interval = setInterval(function() {
+                    if (opacity < 1) {
+                        opacity += 0.1;
+                        focus.style.opacity = opacity;
+                    } else {
+                        clearInterval(interval);
+                        }
+                }, 30);
+            }
         }
 
         const title = document.getElementById("Title");
