@@ -16,17 +16,17 @@
             <div class="child">
                 <!-- Circles closest to the central point -->
                 <div id="inner-orbit">
-                <div id="inner-planet" onclick="checkA()" class="inner-orbit-circles"></div>
+                    <div id="inner-planet" onclick="checkA()" onmouseenter="planetMouseOver(this, 'Game Dev.')" class="inner-orbit-circles"></div>
                 </div>
             
                 <!-- Circles second closest to the central point -->
                 <div id="middle-orbit">
-                <div id="mid-planet" onclick="checkB()" class="middle-orbit-circles"></div>
+                    <div id="mid-planet" onclick="checkB()" onmouseenter="planetMouseOver(this, 'Experience.')" class="middle-orbit-circles"></div>
                 </div>
             
                 <!-- Circles furthest away to the central point -->
                 <div id="outer-orbit">
-                <div id="outer-planet" onclick="checkC()" class="outer-orbit-circles"></div>
+                    <div id="outer-planet" onclick="checkC()" onmouseenter="planetMouseOver(this, 'Projects.')" class="outer-orbit-circles"></div>
                 </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
             <div class="box"><div>two</div></div>
             <div class="box"><div>three</div></div>
             <div class="box"><div>four</div></div>
-          </div>    
+          </div>
     </body>
     <script>
         function checkA() {
@@ -49,45 +49,22 @@
         }
 
         const title = document.getElementById("Title");
-        const innerPlanet = document.getElementById("inner-planet");
-        const midPlanet = document.getElementById("mid-planet");
-        const outerPlanet = document.getElementById("outer-planet");
+        var busy = 0;
 
-        innerPlanet.onmouseover = function () {
-            var opacity = 1;
-            var interval = setInterval(function() {
-               if (opacity > 0) {
-                  opacity -= 0.1;
-                  title.style.opacity = opacity;
-               } else {
-                  clearInterval(interval);
-                  textFadeIn("Game Dev.");
-               }
-            }, 30);
-            function textFadeIn(t) {
-                title.innerHTML = t;
+        function planetMouseOver(element, text) {
+            if (busy == 0) {
+                busy = 1;
+                var opacity = 1;
                 var interval = setInterval(function() {
-                if (opacity < 1) {
-                    opacity += 0.1;
+                if (opacity > 0) {
+                    opacity -= 0.1;
                     title.style.opacity = opacity;
                 } else {
                     clearInterval(interval);
-                    }
+                    textFadeIn(text);
+                }
                 }, 30);
             }
-        }
-
-        midPlanet.onmouseover = function () {
-            var opacity = 1;
-            var interval = setInterval(function() {
-               if (opacity > 0) {
-                  opacity -= 0.1;
-                  title.style.opacity = opacity;
-               } else {
-                  clearInterval(interval);
-                  textFadeIn("Experience.");
-               }
-            }, 30);
             function textFadeIn(t) {
                 title.innerHTML = t;
                 var interval = setInterval(function() {
@@ -96,31 +73,7 @@
                     title.style.opacity = opacity;
                 } else {
                     clearInterval(interval);
-                    }
-                }, 30);
-            }
-        }
-
-        outerPlanet.onmouseover = function () {
-            var opacity = 1;
-            var interval = setInterval(function() {
-               if (opacity > 0) {
-                  opacity -= 0.1;
-                  title.style.opacity = opacity;
-               } else {
-                  clearInterval(interval);
-                  textFadeIn("Projects.");
-               }
-            }, 30);
-            
-            function textFadeIn(t) {
-                title.innerHTML = t;
-                var interval = setInterval(function() {
-                if (opacity < 1) {
-                    opacity += 0.1;
-                    title.style.opacity = opacity;
-                } else {
-                    clearInterval(interval);
+                    busy = 0;
                     }
                 }, 30);
             }
