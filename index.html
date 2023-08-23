@@ -16,41 +16,79 @@
             <div class="child">
                 <!-- Circles closest to the central point -->
                 <div id="inner-orbit">
-                    <div id="inner-planet" onclick="checkA()" onmouseenter="planetMouseOver(this, 'Game Dev.')" class="inner-orbit-circles"></div>
+                    <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')" class="inner-orbit-circles"></div>
                 </div>
             
                 <!-- Circles second closest to the central point -->
                 <div id="middle-orbit">
-                    <div id="mid-planet" onclick="checkB()" onmouseenter="planetMouseOver(this, 'Experience.')" class="middle-orbit-circles"></div>
+                    <div id="mid-planet" onclick="midClick()" onmouseenter="planetMouseOver(this, 'Experience.')" class="middle-orbit-circles"></div>
                 </div>
             
                 <!-- Circles furthest away to the central point -->
                 <div id="outer-orbit">
-                    <div id="outer-planet" onclick="checkC()" onmouseenter="planetMouseOver(this, 'Projects.')" class="outer-orbit-circles"></div>
+                    <div id="outer-planet" onclick="outerClick()" onmouseenter="planetMouseOver(this, 'Projects.')" class="outer-orbit-circles"></div>
                 </div>
             </div>
           </div>
-          <div class="container">
-            <div class="box"><div>one</div></div>
-            <div class="box"><div>two</div></div>
-            <div class="box"><div>three</div></div>
-            <div class="box"><div>four</div></div>
+          <div id="InnerButtons" class="container">
+            <button class="button">
+                <span class="button-text">Game Dev</span>
+                <div class="fill-container"></div>
+              </button>
+              <button class="button">
+                <span class="button-text">More</span>
+                <div class="fill-container"></div>
+              </button>
+          </div>
+          <div id="MidButtons" class="container">
+            <button class="button">
+                <span class="button-text">Experience</span>
+                <div class="fill-container"></div>
+              </button>
+              <button class="button">
+                <span class="button-text">More</span>
+                <div class="fill-container"></div>
+              </button>
+          </div>
+          <div id="OuterButtons" class="container">
+            <button class="button">
+                <span class="button-text">Projects</span>
+                <div class="fill-container"></div>
+              </button>
+              <button class="button">
+                <span class="button-text">More</span>
+                <div class="fill-container"></div>
+              </button>
           </div>
     </body>
     <script>
-        function checkA() {
-            console.log("inner");
+        
+        const innerButtons = document.getElementById("InnerButtons");
+        const midButtons = document.getElementById("MidButtons");
+        const outerButtons = document.getElementById("OuterButtons");
+
+        innerButtons.style.display = 'none';
+        midButtons.style.display = 'none';
+        outerButtons.style.display = 'none';
+
+        function innerClick() {
+            innerButtons.style.display = 'flex';
+            midButtons.style.display = 'none';
+            outerButtons.style.display = 'none';
         }
-        function checkB() {
-            console.log("middle");
+        function midClick() {
+            innerButtons.style.display = 'none';
+            midButtons.style.display = 'flex';
+            outerButtons.style.display = 'none';
         }
-        function checkC() {
-            console.log("outer");
+        function outerClick() {
+            innerButtons.style.display = 'none';
+            midButtons.style.display = 'none';
+            outerButtons.style.display = 'flex';
         }
 
         const title = document.getElementById("Title");
         var busy = 0;
-
         function planetMouseOver(element, text) {
             if (busy == 0) {
                 busy = 1;
