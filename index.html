@@ -1,127 +1,145 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>DS</title>
-        <link href="profileStyles.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="center-title">
-            <h1 class="blinker">></h1>
-            <h1 class="fading-header" id="Title">My Universe.</h1>
-        </div>
 
-        <div id="circle-orbit-container">
-            <div class="child">
-                <div id="inner-orbit">
-                    <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')" class="inner-orbit-circles"></div>
-                </div>
-            
-                <div id="middle-orbit">
-                    <div id="mid-planet" onclick="midClick()" onmouseenter="planetMouseOver(this, 'Experience.')" class="middle-orbit-circles"></div>
-                </div>
-            
-                <div id="outer-orbit">
-                    <div id="outer-planet" onclick="outerClick()" onmouseenter="planetMouseOver(this, 'Projects.')" class="outer-orbit-circles"></div>
-                </div>
+<head>
+    <title>DS</title>
+    <link href="profileStyles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div class="center-title">
+        <h1 class="blinker">></h1>
+        <h1 class="fading-header" id="Title">My Universe.</h1>
+    </div>
+
+    <div id="circle-orbit-container">
+        <div class="child">
+            <div id="inner-orbit">
+                <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')"
+                    class="inner-orbit-circles"></div>
             </div>
-          </div>
 
-          <div id="InnerButtons" class="container">
-            <button class="button" style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Game Dev</span>
-                <div class="fill-container"></div>
-              </button>
-              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
-                <div class="fill-container"></div>
-              </button>
-          </div>
+            <div id="middle-orbit">
+                <div id="mid-planet" onclick="midClick()" onmouseenter="planetMouseOver(this, 'Experience.')"
+                    class="middle-orbit-circles"></div>
+            </div>
 
-          <div id="MidButtons" class="container">
-            <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Experience</span>
-                <div class="fill-container"></div>
-              </button>
-              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
-                <div class="fill-container"></div>
-              </button>
-          </div>
+            <div id="outer-orbit">
+                <div id="outer-planet" onclick="outerClick()" onmouseenter="planetMouseOver(this, 'Projects.')"
+                    class="outer-orbit-circles"></div>
+            </div>
+        </div>
+    </div>
 
-          <div id="OuterButtons" class="container">
-            <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Projects</span>
-                <div class="fill-container"></div>
-              </button>
-              <button class="button"  style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
-                <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
-                <div class="fill-container"></div>
-              </button>
-          </div>
-    </body>
-    <script>
-        
-        const innerButtons = document.getElementById("InnerButtons");
-        const midButtons = document.getElementById("MidButtons");
-        const outerButtons = document.getElementById("OuterButtons");
+    <div id="InnerButtons" class="container">
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>Game Dev</span>
+            <div class="fill-container"></div>
+        </button>
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
+            <div class="fill-container"></div>
+        </button>
+    </div>
 
-        innerButtons.style.display = 'none';
-        innerButtons.style.opacity = 0;
-        midButtons.style.display = 'none';
-        midButtons.style.opacity = 0;
-        outerButtons.style.display = 'none';
-        outerButtons.style.opacity = 0;
+    <div id="MidButtons" class="container">
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>Experience</span>
+            <div class="fill-container"></div>
+        </button>
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
+            <div class="fill-container"></div>
+        </button>
+    </div>
 
-        function innerClick() {
-            buttonHandler(innerButtons, midButtons, outerButtons)
-        }
+    <div id="OuterButtons" class="container">
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>Projects</span>
+            <div class="fill-container"></div>
+        </button>
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(255, 166, 0, 0.5); --border-color: orange;">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>More</span>
+            <div class="fill-container"></div>
+        </button>
+    </div>
+</div>
+</body>
+<script>
 
-        function midClick() {
-            buttonHandler(midButtons, innerButtons, outerButtons)
-        }
+    const innerButtons = document.getElementById("InnerButtons");
+    const midButtons = document.getElementById("MidButtons");
+    const outerButtons = document.getElementById("OuterButtons");
 
-        function outerClick() {
-            buttonHandler(outerButtons, innerButtons, midButtons)
-        }
+    innerButtons.style.display = 'none';
+    innerButtons.style.opacity = 0;
+    midButtons.style.display = 'none';
+    midButtons.style.opacity = 0;
+    outerButtons.style.display = 'none';
+    outerButtons.style.opacity = 0;
 
-        function buttonHandler(focus, outA, outB) {
-            var opacity = 1;
-                var interval = setInterval(function() {
-                if (opacity > 0) {
-                    opacity -= 0.1;
-                    outA.style.opacity = opacity;
-                    outB.style.opacity = opacity;
+    function innerClick() {
+        buttonHandler(innerButtons, midButtons, outerButtons)
+    }
+
+    function midClick() {
+        buttonHandler(midButtons, innerButtons, outerButtons)
+    }
+
+    function outerClick() {
+        buttonHandler(outerButtons, innerButtons, midButtons)
+    }
+
+    function buttonHandler(focus, outA, outB) {
+        var opacity = 1;
+        var interval = setInterval(function () {
+            if (opacity > 0) {
+                opacity -= 0.1;
+                outA.style.opacity = opacity;
+                outB.style.opacity = opacity;
+            } else {
+                clearInterval(interval);
+                outA.style.display = 'none';
+                outB.style.display = 'none';
+                buttonFadeIn();
+            }
+        }, 30);
+
+        function buttonFadeIn() {
+            focus.style.display = 'flex';
+            var interval = setInterval(function () {
+                if (opacity < 1) {
+                    opacity += 0.1;
+                    focus.style.opacity = opacity;
                 } else {
                     clearInterval(interval);
-                    outA.style.display = 'none';
-                    outB.style.display = 'none';
-                    buttonFadeIn();
                 }
-                }, 30);
-                
-                function buttonFadeIn() {
-                    focus.style.display = 'flex';
-                    var interval = setInterval(function() {
-                    if (opacity < 1) {
-                        opacity += 0.1;
-                        focus.style.opacity = opacity;
-                    } else {
-                        clearInterval(interval);
-                        }
-                }, 30);
-            }
+            }, 30);
         }
+    }
 
-        const title = document.getElementById("Title");
-        var busy = 0;
-        function planetMouseOver(element, text) {
-            if (busy == 0) {
-                busy = 1;
-                var opacity = 1;
-                var interval = setInterval(function() {
+    const title = document.getElementById("Title");
+    var busy = 0;
+    function planetMouseOver(element, text) {
+        if(text.innerHTML == "My Universe." && title.innerHTML == "My Universe.") {
+            return;
+        }
+        if (busy == 0) {
+            busy = 1;
+            var opacity = 1;
+            var interval = setInterval(function () {
                 if (opacity > 0) {
                     opacity -= 0.1;
                     title.style.opacity = opacity;
@@ -129,21 +147,62 @@
                     clearInterval(interval);
                     textFadeIn(text);
                 }
-                }, 30);
-            }
-            function textFadeIn(t) {
-                title.innerHTML = t;
-                var interval = setInterval(function() {
+            }, 30);
+        }
+        function textFadeIn(t) {
+            title.innerHTML = t;
+            var interval = setInterval(function () {
                 if (opacity < 1) {
                     opacity += 0.1;
                     title.style.opacity = opacity;
                 } else {
                     clearInterval(interval);
                     busy = 0;
-                    }
-                }, 30);
-            }
+                }
+            }, 30);
         }
-        
-    </script>
+    }
+
+    let inactivityTime = function() {
+        let time;
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        function resetTitle() {
+            planetMouseOver(this, "My Universe.")
+        }
+        function resetTimer() {
+          clearTimeout(time);
+          time = setTimeout(resetTitle, 5000)
+        }
+      };
+      window.onload = function() {
+        inactivityTime();
+      }
+
+
+
+    particlesJS("particles-js", { "particles": { "number": { 
+        "value": 40, "density": { "enable": true, "value_area": 800 } }, 
+        "color": { "value": ["#FFFFFF","#D6ABFF"] }, "shape": { "type": "circle", "stroke": { 
+        "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } }, "opacity": { 
+        "value": 0.5, "random": false, "anim": { 
+        "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, 
+        "size": { "value": 3, "random": true, "anim": {
+        "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
+        "line_linked": { "enable": true, "distance": 175, "color": "#3FFFF0", 
+        "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1, 
+        "direction": "top", "random": true, "straight": true, "out_mode": "out", 
+        "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, 
+        "interactivity": { "detect_on": "canvas", "events": { "onhover": { 
+        "enable": true, "mode": "bubble" }, "onclick": { "enable": false, 
+        "mode": "push" }, "resize": true }, "modes": { "grab": { 
+        "distance": 400, "line_linked": { "opacity": 1 } }, 
+        "bubble": { "distance": 400, "size": 3, "duration": 2, 
+        "opacity": 0.9, "speed": 3 }, "repulse": { "distance": 1, 
+        "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": 
+        { "particles_nb": 2 } } }, "retina_detect": true }); 
+        update = function () { requestAnimationFrame(update); }; 
+        requestAnimationFrame(update);
+
+</script>
 </html>
