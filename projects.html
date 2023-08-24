@@ -1,61 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
-    <meta charset="utf-8" />
-    <title>My projects</title>
-    <link href="profileStyles.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Red Hat Text">
-
-    <!-- Defer means the script is executed at the end but loaded where it is as html is read line by line -->
-    <script src="src/p5.js" defer></script>
-    <script src="src/balloon.js" defer></script>
-    <script src="src/game.js" defer></script>
+    <title>DS</title>
+    <link href="standardStyle.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
 </head>
-
-<body class="container">
-    <nav class="flex-container">
-        <p class="pipes">||</p>
-        <a class="navi" href="index.html"><span class="arrownav">></span> Profile</a>
-        <p class="pipes">||</p>
-        <a class="navi" href="projects.html"><span class="arrownav">></span>Projects</a>
-        <p class="pipes">||</p>
-        <a class="navi" href="https://www.linkedin.com/in/danyal-saleh-99506824b/" target="_blank"><span class="arrownav">></span>LinkedIn</a>
-        <p class="pipes">||</p>
-    </nav>
-
+<body>
     <section>
-        <h1 class="Display-1">>Projects</h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Project Name</th>
-                    <th>Description</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Agile Project</td>
-                    <td>Did some stuff with user stories</td>
-                    <td>2023</td>
-                </tr>
-                <tr>
-                    <td>Safari Park Project</td>
-                    <td>Demonstrated polymorphism</td>
-                    <td>2023</td>
-                </tr>
-            </tbody>
-        </table>
+        <img src="images/test7.png" id="stars">
+        <div class="center-title" id="title">
+            <h1 class="blinker">></h1>
+            <h1 class="fading-header" id="Title">Projects.</h1>
+        </div>
+        <img src="images/test5.png" id="rocks">
     </section>
+    <div id="InnerButtons" class="container">
+        <button class="button"
+            style="background-image: url('images/test.jpeg'); background-size: cover; --fill-color: rgba(192, 19, 19, 0.5); --border-color: rgb(192, 19, 19);">
+            <span class="button-text"><span class="blinker" style="font-size: small;">></span>Test</span>
+            <div class="fill-container"></div>
+        </button>
+    </div>
+    <div class="content">
 
-    <section class="box-2" id="game-container">
-        <h2 id = "game-title">Javascript Game</h2>
-        <button onclick="reset()" id="reset-button">Reset</button>
-        <p>Score: <span id="score">0</span></p>
-    </section>
-
+    </div>
 </body>
+<script>
+    let title = document.getElementById('title');
+    let stars = document.getElementById('stars')
+
+    window.addEventListener('scroll', () => {
+        let value = window.scrollY;
+        console.log(value);    //todo need a limit for the text moving;
+        title.style.marginTop = value * 0.5 +'px';
+        stars.style.paddingLeft = value * 1.5 + 'px';
+    });
+</script>
 </html>
 
 
