@@ -56,8 +56,8 @@ body {
     height: 294px;
     border: 2px #f7f7f7da dashed;
     border-radius: 100%;
-    -webkit-animation: orbit 10s linear infinite;
-    animation: orbit 10s linear infinite;
+    -webkit-animation: orbit 15s linear infinite;
+    animation: orbit 15s linear infinite;
     z-index: 3;
   }
   
@@ -88,8 +88,8 @@ body {
     height: 392px;
     border: 2px #f7f7f7da dashed;
     border-radius: 100%;
-    -webkit-animation: orbit 12s linear infinite;
-    animation: orbit 12s linear infinite;
+    -webkit-animation: orbit 18s linear infinite;
+    animation: orbit 18s linear infinite;
     z-index: 2;
   }
   
@@ -112,8 +112,8 @@ body {
     height: 490px;
     border: 2px #f7f7f7da dashed;
     border-radius: 100%;
-    -webkit-animation: orbit 25s linear infinite;
-    animation: orbit 25s linear infinite;
+    -webkit-animation: orbit 37.5s linear infinite;
+    animation: orbit 37.5s linear infinite;
     z-index: 1;
   }
   
@@ -135,7 +135,7 @@ body {
   }
 
   .container {
-    margin-top: 150px;
+    margin-top: 125px;
     width: 100%;
     min-height: 150px;
     display: flex;
