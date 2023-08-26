@@ -4,9 +4,25 @@
     box-sizing: border-box;
 }
 
+:root {
+    --fill-color: rgba(255, 255, 255, 0.377);
+    --border-color: rgb(255, 255, 255);
+  }
+
 body {
     min-height: 100vh;
-    background: linear-gradient(#000000, #0b0425);
+}
+
+.projects {
+    background: linear-gradient(#000000 0%, #0b0425 50%);
+}
+
+.experience {
+    background: linear-gradient(#000000 0%, #0b0425);
+}
+
+.gamedev {
+    background: linear-gradient(#000000 0%, #530d22 50%);
 }
 
 section {
@@ -40,6 +56,26 @@ section img #stars {
     text-align: center;
 }
 
+.standard-content {
+    position: relative;
+    color: white;
+    font-family: 'Oxanium', cursive;
+    margin: 75px;
+}
+
+h2 {
+    text-align: left;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+p {
+    text-align: justify;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
 .fading-header, .blinker {
     position: relative;
     display: inline;
@@ -59,13 +95,8 @@ section img #stars {
   }
 
 /* ---------- Buttons ---------- */
-:root {
-    --fill-color: rgba(255, 255, 255, 0.377);
-    --border-color: rgb(255, 255, 255);
-  }
-
   .container {
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     min-height: 150px;
     display: flex;
