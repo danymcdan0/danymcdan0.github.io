@@ -22,7 +22,7 @@ body {
 }
 
 .gamedev {
-    background: linear-gradient(#000000 0%, #530d22 50%);
+    background: linear-gradient(#000000 0%, #530d22 50%); //todo need to get correct coloration with background 
 }
 
 section {

@@ -10,11 +10,11 @@ body {
 
 
 .center-title {
-  top: 50px;
-    margin: auto;
-    text-align: center;
-    z-index: 2;
-    position: relative;
+  top: 50px;    
+  margin: auto;
+  text-align: center;
+  z-index: 2;
+  position: relative;
   }
 
 .fading-header, .blinker {
@@ -28,6 +28,21 @@ body {
   animation: blinker 1.5s linear infinite;
 }
 
+.instruct {
+  top: 150px;    
+  margin: auto;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.instruct-text {
+  display: inline;
+  font-family: 'Oxanium', cursive;
+  color: white;
+  font-size: 20px;
+}
+
 /* ---------- Orbit ---------- */
 
 #circle-orbit-container {
@@ -37,6 +52,17 @@ body {
   height: 500px;
   width: 500px;
   z-index: 9999;
+  }
+
+  img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-height: 128px;
+    min-width: 128px;
+    top: 80px;
+    left: 80px;
+    image-rendering: pixelated;
   }
 
   .child {

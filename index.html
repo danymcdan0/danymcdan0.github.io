@@ -15,11 +15,13 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div class="center-title">
         <h1 class="blinker">></h1>
-        <h1 class="fading-header" id="Title">My Universe.</h1>
+        <h1 class="fading-header" id="Title">Welcome to my Universe.</h1> <!--TODO: Universe sounds a bit cringe - find something better? Like Orbit? -->
     </div>
 
     <div id="circle-orbit-container">
         <div class="child">
+            <div class="image"><img src="images/Duck Logo.png"></img></div> <!--TODO: Folder containing all pixel logos (in relation to me e.g. dragon) and make image source be randomly picked -->
+            <!-- https://codepen.io/BeginHere/pen/wMENra?js-preprocessor=none ///// https://www.geeksforgeeks.org/random-image-generator-using-javascript/#:~:text=We%20use%20the%20setInterval(),the%20images%20to%20display%20randomly. -->
             <div id="inner-orbit">
                 <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')"
                     class="inner-orbit-circles"></div>
@@ -35,6 +37,11 @@
                     class="outer-orbit-circles"></div>
             </div>
         </div>
+    </div>
+
+    <div class="instruct" id="Instructions">
+        <h1 class="blinker" style="font-size: larger;">></h1>
+        <h1 class="instruct-text" id="Instructions-text">Select a world...</h1>
     </div>
 
     <div id="InnerButtons" class="container">
@@ -82,6 +89,7 @@
     const innerButtons = document.getElementById("InnerButtons");
     const midButtons = document.getElementById("MidButtons");
     const outerButtons = document.getElementById("OuterButtons");
+    const instructions = document.getElementById("Instructions");
 
     innerButtons.style.display = 'none';
     innerButtons.style.opacity = 0;
@@ -103,11 +111,13 @@
     }
 
     function buttonHandler(focus, outA, outB) {
+        instructions.style.display = 'none';
         var opacity = 1;
         var interval = setInterval(function () {
             if (opacity > 0) {
                 opacity -= 0.1;
                 outA.style.opacity = opacity;
+                instructions.style.opacity = opacity;
                 outB.style.opacity = opacity;
             } else {
                 clearInterval(interval);
