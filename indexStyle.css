@@ -193,6 +193,7 @@ body {
       background-color: rgba(0, 0, 0, 0.75);
       border-radius: 6px;
       z-index: 2;
+      text-decoration: none;
     }
   
     .fill-container {
