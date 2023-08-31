@@ -64,7 +64,7 @@ section img #stars {
 }
 
 h2 {
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     margin-top: 25px;
     margin-bottom: 30px;
@@ -74,6 +74,22 @@ p {
     text-align: justify;
     font-size: 20px;
     margin-bottom: 15px;
+}
+
+hr {
+  height: 3px;
+  border: none;
+  border-radius: 6px;
+}
+hr.top {
+
+  background: linear-gradient(
+    90deg, rgba(255,188,0,1) 0%, rgba(255,219,117,1) 21%, rgba(255,233,171,1) 51%, rgba(255,255,255,1) 100%);
+}
+
+hr.bot {
+  background: linear-gradient(
+    90deg, rgba(255,255,255,1) 0%, rgba(255,233,171,1) 21%, rgba(255,219,117,1) 51%, rgba(255,188,0,1) 100%);
 }
 
 .fading-header, .blinker {
@@ -125,6 +141,10 @@ p {
     .button-text {
       position: relative;
       z-index: 2;
+      padding: 10%;
+      font-size: larger;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 6px;
     }
   
     .fill-container {
