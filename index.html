@@ -22,16 +22,19 @@
         <div class="child">
             <div class="image"><img src="images/Duck Logo.png"></img></div> <!--TODO: Folder containing all pixel logos (in relation to me e.g. dragon) and make image source be randomly picked -->
             <!-- https://codepen.io/BeginHere/pen/wMENra?js-preprocessor=none ///// https://www.geeksforgeeks.org/random-image-generator-using-javascript/#:~:text=We%20use%20the%20setInterval(),the%20images%20to%20display%20randomly. -->
+            <div id="inner-orbit-ring"></div>
             <div id="inner-orbit">
                 <div id="inner-planet" onclick="innerClick()" onmouseenter="planetMouseOver(this, 'Game Dev.')"
                     class="inner-orbit-circles"></div>
             </div>
 
+            <div id="middle-orbit-ring"></div>
             <div id="middle-orbit">
                 <div id="mid-planet" onclick="midClick()" onmouseenter="planetMouseOver(this, 'Experience.')"
                     class="middle-orbit-circles"></div>
             </div>
 
+            <div id="outer-orbit-ring"></div>
             <div id="outer-orbit">
                 <div id="outer-planet" onclick="outerClick()" onmouseenter="planetMouseOver(this, 'Projects.')"
                     class="outer-orbit-circles"></div>
@@ -41,7 +44,7 @@
 
     <div class="instruct" id="Instructions">
         <h1 class="blinker" style="font-size: larger;">></h1>
-        <h1 class="instruct-text" id="Instructions-text">Select a world...</h1>
+        <h1 class="instruct-text" id="Instructions-text">Select a world.</h1>
     </div>
 
     <div id="InnerButtons" class="container">

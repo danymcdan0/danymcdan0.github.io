@@ -45,6 +45,10 @@ body {
 
 /* ---------- Orbit ---------- */
 
+:root {
+  --ring-color: #deffd444;
+}
+
 #circle-orbit-container {
   margin: auto;
   position: relative;
@@ -74,23 +78,32 @@ body {
     margin: -25px 0 0 -25px; 
   }
   
-  #inner-orbit {
+  #inner-orbit, #inner-orbit-ring {
     position: absolute;
     top: 0;
     left: 0;
     width: 294px;
     height: 294px;
-    border: 2px #f7f7f7da dashed;
-    border-radius: 100%;
+    z-index: 3;
+  }
+
+  #inner-orbit {
     -webkit-animation: orbit 15s linear infinite;
     animation: orbit 15s linear infinite;
-    z-index: 3;
+  }
+
+  #inner-orbit-ring {
+    border: 2px var(--ring-color) solid;
+    border-radius: 100%;
+    -webkit-animation: orbit-fade 15s linear infinite;
+    animation: orbit-fade 15s linear infinite;
   }
   
   .inner-orbit-circles {
     position: absolute;
-    top: 43px;
-    left: 0px;
+    opacity: 100;
+    top: 140px;
+    left: -20px;
     height: 45px;
     width: 45px;
     border-radius: 100%;
@@ -106,23 +119,31 @@ body {
     transition: box-shadow 0.3s ease-in-out;
   }
   
-  #middle-orbit {
+  #middle-orbit, #middle-orbit-ring {
     position: absolute;
     top: -49px;
     left: -49px;
     width: 392px;
     height: 392px;
-    border: 2px #f7f7f7da dashed;
-    border-radius: 100%;
+    z-index: 2;
+  }
+
+  #middle-orbit {
     -webkit-animation: orbit 18s linear infinite;
     animation: orbit 18s linear infinite;
-    z-index: 2;
+  }
+  
+  #middle-orbit-ring {
+    border: 2px var(--ring-color) solid;
+    border-radius: 100%;
+    -webkit-animation: orbit-fade 18s linear infinite;
+    animation: orbit-fade 18s linear infinite;
   }
   
   .middle-orbit-circles {
     position: absolute;
     top: 33px;
-    left: 33px;
+    left: 315px;
     height: 45px;
     width: 45px;
     border-radius: 100%;
@@ -130,17 +151,25 @@ body {
     z-index: 2;
   }
   
-  #outer-orbit {
+  #outer-orbit, #outer-orbit-ring {
     position: absolute;
     top: -98px;
     left: -98px;
     width: 490px;
     height: 490px;
-    border: 2px #f7f7f7da dashed;
-    border-radius: 100%;
+    z-index: 1;
+  }
+
+  #outer-orbit {
     -webkit-animation: orbit 37.5s linear infinite;
     animation: orbit 37.5s linear infinite;
-    z-index: 1;
+  }
+
+  #outer-orbit-ring {
+    border: 2px var(--ring-color) solid;
+    border-radius: 100%;
+    -webkit-animation: orbit-fade 37.5s linear infinite;
+    animation: orbit-fade 37.5s linear infinite;
   }
   
   .outer-orbit-circles {
@@ -240,6 +269,19 @@ body {
       -ms-transform: rotate(360deg);
       -o-transform: rotate(360deg);
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit-fade {
+    100% {
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+    50% {
+      opacity: 0;
     }
   }
 
