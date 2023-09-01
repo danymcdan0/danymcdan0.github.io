@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxanium&display=swap" rel="stylesheet">
 </head>
 <body class="gamedev";>
+    <a href="index.html" class="top-link hide" id="js-top">
+        <svg enable-background="new 0 0 32 32" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M18.221,7.206l9.585,9.585c0.879,0.879,0.879,2.317,0,3.195l-0.8,0.801c-0.877,0.878-2.316,0.878-3.194,0  l-7.315-7.315l-7.315,7.315c-0.878,0.878-2.317,0.878-3.194,0l-0.8-0.801c-0.879-0.878-0.879-2.316,0-3.195l9.587-9.585  c0.471-0.472,1.103-0.682,1.723-0.647C17.115,6.524,17.748,6.734,18.221,7.206z" fill="#515151"/></svg>
+    </a>
+    <a href="index.html" class="home-link show" id="js-home">
+        <img src="images/planet-orbit-line-outline-icon-removebg-preview.png" width="70" height="70" class="button-orbit">
+    </a>
     <section>
         <div class="center-title" id="title">
             <h1 class="blinker">></h1>
@@ -55,6 +61,36 @@
         console.log(value);    //todo need a limit for the text moving;
         title.style.marginTop = value * 0.5 +'px';
     });
+
+    // Sticky Button
+    const scrollToTopButton = document.getElementById('js-top');
+    const homeButton = document.getElementById('js-home');
+    const scrollFunc = () => {
+        let y = window.scrollY;
+        
+        if (y-300 > 0) {
+            scrollToTopButton.className = "top-link show";
+            homeButton.className = "home-link show";
+        } else {
+            scrollToTopButton.className = "top-link hide";
+            homeButton.className = "home-link hide";
+        }
+    };
+
+    window.addEventListener("scroll", scrollFunc);
+    const scrollToTop = () => {
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+
+    if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, c - c / 10);
+    }
+    };
+
+    scrollToTopButton.onclick = function(e) {
+        e.preventDefault();
+        scrollToTop();
+    }
 </script>
 </html>
 

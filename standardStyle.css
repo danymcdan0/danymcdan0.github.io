@@ -11,6 +11,7 @@
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .projects {
@@ -22,7 +23,7 @@ body {
 }
 
 .gamedev {
-    background: linear-gradient(#000000 0%, #530d22 50%); //todo need to get correct coloration with background 
+    background: linear-gradient(#000000 0%, #530d22 50%);
 }
 
 section {
@@ -84,12 +85,12 @@ hr {
 hr.top {
 
   background: linear-gradient(
-    90deg, rgba(255,188,0,1) 0%, rgba(255,219,117,1) 21%, rgba(255,233,171,1) 51%, rgba(255,255,255,1) 100%);
+    90deg, rgb(0, 102, 255) 0%, rgb(117, 161, 255) 21%, rgb(171, 231, 255) 51%, rgba(255,255,255,1) 100%);
 }
 
 hr.bot {
   background: linear-gradient(
-    90deg, rgba(255,255,255,1) 0%, rgba(255,233,171,1) 21%, rgba(255,219,117,1) 51%, rgba(255,188,0,1) 100%);
+    90deg, rgba(255,255,255,1) 0%, rgb(171, 231, 255) 21%, rgb(117, 161, 255) 51%, rgb(0, 102, 255) 100%);
 }
 
 .fading-header, .blinker {
@@ -109,6 +110,62 @@ hr.bot {
       opacity: 0;
     }
   }
+
+/* ---------- Sticky ---------- */
+
+.top-link , .home-link{
+  transition: all .25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+	cursor: pointer;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	padding: .5em;
+	width: 50px;
+	height: 50px;
+  background-color: #f8f8f8af;
+  
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+	&:hover {
+		background-color: #ffffff;
+	}
+
+}
+
+.home-link {
+  margin-bottom: 20px;
+  margin-right: 1%;
+}
+
+.top-link {
+  margin-bottom: 80px;
+  margin-right: 1%;
+}
+
+.button-orbit{
+  animation: rotation 20s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* ---------- Buttons ---------- */
   .container {
