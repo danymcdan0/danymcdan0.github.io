@@ -104,12 +104,18 @@
         return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
 
-    var image = getRndInteger(1,2);
+    var image = getRndInteger(1,4);
 
     if (image == 1) {
         document.getElementById("logo").src ="images/Duck Logo.png";
     }
     else if (image == 2) {
+        document.getElementById("logo").src ="images/Dragon Logo.png";
+    }
+    else if (image == 3) {
+        document.getElementById("logo").src ="images/Volleyball Logo.png";
+    }
+    else if (image == 4) {
         document.getElementById("logo").src ="images/Draft Logo.png";
     }
 
