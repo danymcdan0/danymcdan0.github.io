@@ -147,6 +147,7 @@ hr.bot {
 .home-link {
   margin-bottom: 20px;
   margin-right: 1%;
+  z-index: 9999;
 }
 
 .top-link {

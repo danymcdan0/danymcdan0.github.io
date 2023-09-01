@@ -64,16 +64,13 @@
 
     // Sticky Button
     const scrollToTopButton = document.getElementById('js-top');
-    const homeButton = document.getElementById('js-home');
     const scrollFunc = () => {
         let y = window.scrollY;
         
         if (y-300 > 0) {
             scrollToTopButton.className = "top-link show";
-            homeButton.className = "home-link show";
         } else {
             scrollToTopButton.className = "top-link hide";
-            homeButton.className = "home-link hide";
         }
     };
 
