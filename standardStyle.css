@@ -45,8 +45,6 @@ section img {
   object-fit: cover;
 }
 
-section img #rocks {}
-
 section img #stars {
   background-repeat: repeat-x;
 }
@@ -147,9 +145,18 @@ hr.bot {
   border-radius: 50vw;
 }
 
-.tags :hover {
+.tags p:hover {
   background-color: rgba(255, 255, 255, 0.75);
   color: #000000;
+}
+
+.tags a {
+  color: #000000;
+  font-weight: bolder;
+}
+
+.tags a :hover{
+  cursor: pointer;
 }
 
 /* ---------- SlideShow ---------- */
