@@ -58,7 +58,7 @@ body {
   z-index: 9999;
   }
 
-  img {
+  img  {
     position: absolute;
     width: auto;
     height: auto;
@@ -147,7 +147,7 @@ body {
     height: 45px;
     width: 45px;
     border-radius: 100%;
-    background: radial-gradient(circle at 10% 75%, #387534, #2e6a32 20%, #153d6e 80%, #619cff 100%);
+    background: radial-gradient(circle at 10% 75%, #4ea547, #44964a 20%, #153d6e 80%, #619cff 100%);
     z-index: 2;
   }
   
