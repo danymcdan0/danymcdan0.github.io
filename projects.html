@@ -56,7 +56,16 @@
             <h4>JULY 2023</h4>
             <div class="tags">
                 <p>Agile</p>
-                <p><a href="https://https://github.com/danymcdan0/EF-PersonalProfile" target="_blank">Github</a></p>
+                <p>API</p>
+                <p>ASP.NET</p>
+                <p>Azure</p>
+                <p>CSS</p>
+                <p>C#</p>
+                <p>Cookies</p>
+                <p>HTML</p>
+                <p>SQL</p>
+                <p>Model First EF</p>
+                <p><a href="https://github.com/danymcdan0/EF-PersonalProfile" target="_blank">Github</a></p>
             </div>
             <div class="slideshow-container">
                 <div class="OPPSlides fade">
@@ -103,13 +112,39 @@
                 </div>
             </div>
             <br>
-            <p>This project was to create an ASP.NET Core Web API that could be consumed by an MVC Web Application while
-                following
-                Restful practices. This web application contains the use of Controllers to direct URI navigation and
-                Domain Models/DTOs for
-                displaying and saving data in an SQL database. It does this through the use of asynchronous programming
-                utilizing the
-                Repository Pattern. Further Azure was used to publish the site online.</p>
+            <p>
+                The objective of this project was to create an ASP.NET Core Web API that could be consumed by an MVC Web
+                Application while following Restful practices. To this end, I decided to make a type of online portfolio
+                that would display my experience, projects and education but also double down on showing off my skills
+                with ASP.NET as a whole.
+            </p>
+            <p>This project began with setting up the Domain models for the model first approach, the DBContext and the
+                DIC (Dependency Injection Container) to allow for the use of CRUD operations. DTOs were created to not
+                expose the original Models for security reasons, and the Repository Pattern was implemented allowing for
+                modularity and flexibility along side the use of Controllers to direct URI navigation between the API
+                and the MVC Web App. An automapper was implemented to allow for object to object mapping between the
+                domain models and DTOs and also model validations were added to ensure that submitted DTOs were in the
+                correct format.
+            </p>
+            <p>I wanted to implement and Authentication Flow, where the once I logged in I would be able to edit, create
+                or delete entries from the MVC Web App into the database. To do this I implemented my own
+                IdentityDbContext creating an AuthController and setup using JwT Tokens to be stored as a cookies for a
+                limited amount of time. This allowed for role based authorization on my site, showing extra
+                functionality (edit, delete, create...) that would be initially hidden to a normal visiter to the site.
+            </p>
+            <p>I further explored into trying to make this site public and deciding on trying to learn and add Azure to
+                my skillset. I was able to set-up and publish my local database for my API to an azure database and also
+                publishing my MVC Web App to consume my API.
+            </p>
+            <p>Through this project I refined my ASP.NET experience, adding Azure and JWT tokens to my skill set but
+                also learnt that for making a type of personal profile online, a better approach is to use a static
+                site. There is no advantage to utilize a database in this such context when it would only contain
+                information on topics i've written and would not be changed often overtime, so most of the features felt
+                redundant in the end. Hence after this project I focused my time and effort onto making the static site
+                you are looking at today.</p>
+            <p style="font-size: small;">Why is this project not online anymore?
+                My free subscription to azure ran out :)
+            </p>
         </div>
         <hr class="bot"
             style="--hr-color-c: rgb(255,171,171); --hr-color-b: rgb(255,117,117); --hr-color-a: rgb(255,0,0);">
@@ -118,7 +153,15 @@
             <h4>JUNE 2023</h4>
             <div class="tags">
                 <p>Agile</p>
-                <p><a href="https://https://github.com/danymcdan0/Sparta_TraineeTrackerWebApp" target="_blank">Github</a></p>
+                <p>API</p>
+                <p>ASP.NET</p>
+                <p>CSS</p>
+                <p>C#</p>
+                <p>HTML</p>
+                <p>SQL</p>
+                <p>Model First EF</p>
+                <p>Group Project</p>
+                <p><a href="https://github.com/danymcdan0/Sparta_TraineeTrackerWebApp" target="_blank">Github</a></p>
             </div>
             <div class="slideshow-container">
                 <div class="TTSlides fade">
@@ -172,10 +215,25 @@
                 </div>
             </div>
             <br>
-            <p>As a group we were able to provide an efficient and user-friendly platform that allows trainees to update
-                their progress on
-                a weekly basis. This allows trainers to view trainee trackers, and trainees to create, edit, and delete
-                their own trackers.</p>
+            <p>In this project we were assigned the task to create a trainee tracker, where trainees handle their own
+                trackers, trainers are able to view their trainees, and finally admins who are able to handle the
+                trainer and trainee users.</p>
+            <p>As a group we were able to achieve creating the Trainee Tracker Application as a ASP.NET MVC application
+                that allows trainees to create, read, update, and delete their tracker entries. Trainers can view all
+                entries from all trainees and mark progress, but they are restricted from creating, editing, or deleting
+                entries. Additionally, an admin user has the authority to access a list of all users.
+            </p>
+            <p>The Trainee Tracker Application uses a dependency injection (DI) container to manage the dependencies
+                between its components. DI containers inject dependencies from outside sources rather than creating them
+                internally. This promotes modularity, testability, and flexibility. The application uses a DI container
+                to inject the IService, IMapper and TraineeTrackerContext to wherever they are needed.
+            </p>
+            <p>The Trainee Tracker Application follows a layered architecture and incorporates a service layer to
+                encapsulate business logic and promote separation of concerns. It contains the core application logic,
+                such as validation, data manipulation, and complex operations. By implementing a service layer, the
+                application achieves better modularity, maintainability, and testability. The service layer allows for
+                easier reuse of business logic across different controllers and promotes a more structured and organized
+                codebase.</p>
             <hr class="top"
                 style="--hr-color-c: rgb(255,171,171); --hr-color-b: rgb(255,117,117); --hr-color-a: rgb(255,0,0);">
         </div>
