@@ -160,6 +160,13 @@ hr.bot {
   cursor: pointer;
 }
 
+footer a{
+  font-family: 'Oxygen', sans-serif;
+  font-size: x-small;
+  color: white;
+  text-decoration: none;
+}
+
 /* ---------- SlideShow ---------- */
 
 .slideshow-container {
