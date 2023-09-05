@@ -247,7 +247,7 @@
     showSlidesOPP();
     showSlidesTT();
 
-    function showSlidesOPP() { //TODO reduce code smells by passing variable for elementClass & which counter to use.
+    function showSlidesOPP() {
         let i;
         let slides = document.getElementsByClassName("OPPSlides");
         for (i = 0; i < slides.length; i++) {
@@ -256,7 +256,7 @@
         slideIndexOPP++;
         if (slideIndexOPP > slides.length) { slideIndexOPP = 1 }
         slides[slideIndexOPP - 1].style.display = "block";
-        setTimeout(showSlidesOPP, 5000);
+        setTimeout(showSlidesOPP, 7000);
     }
 
     function showSlidesTT() {
@@ -268,7 +268,7 @@
         slideIndexTT++;
         if (slideIndexTT > slides.length) { slideIndexTT = 1 }
         slides[slideIndexTT - 1].style.display = "block";
-        setTimeout(showSlidesTT, 5000);
+        setTimeout(showSlidesTT, 7000);
     }
 
     let title = document.getElementById('title');
