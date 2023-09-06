@@ -55,7 +55,8 @@
         </button>
     </div>
     <div class="standard-content">
-    <h2 class="divider line glow" id="dropsort-section"style="--color-a: red; --color-b: blue;"><span class="blinker" style="font-size: xx-large;">></span>DropSort</h2>
+        <h2 class="divider line glow" id="dropsort-section" style="--color-a: red; --color-b: blue;"><span
+                class="blinker" style="font-size: xx-large;">></span>DropSort</h2>
         <div class="tags">
             <p>Agile</p>
             <p>Blender</p>
@@ -129,7 +130,8 @@
             navmesh agents, rigidbody, ontrigger methods and much more, where the player has to sort entities correctly
             according to cues, getting increasingly difficult over time. Further progress is saved over time to see the
             improvements of the player by a therapist which was one of the main aims of the project.</p>
-        <h2 class="divider line glow" id="5YearMission-section" style="--color-a: blue; --color-b: red;"><span class="blinker" style="font-size: xx-large;">></span>5YearMission</h2>
+        <h2 class="divider line glow" id="5YearMission-section" style="--color-a: blue; --color-b: red;"><span
+                class="blinker" style="font-size: xx-large;">></span>5YearMission</h2>
         <div class="tags">
             <p>Agile</p>
             <p>A* Search</p>
@@ -212,7 +214,8 @@
             overlord, collecting the necessary resources for the final 5 Year Mission home. The game presents
             various scenarios in which the player is typically given two options, attachment or progression of the
             game where their decisions are recorded to be analysed for the research purpose of this project.</p>
-        <h2 id="pv-section" class="divider line glow" style="--color-a: red; --color-b: blue;"><span class="blinker" style="font-size: xx-large;">></span>PROJECT: Venus</h2>
+        <h2 id="pv-section" class="divider line glow" style="--color-a: red; --color-b: blue;"><span class="blinker"
+                style="font-size: xx-large;">></span>PROJECT: Venus</h2>
         <h3>GRID SYSTEM</h3>
         <h4>Devlog May 2023</h4>
         <div class="slideshow-container">
@@ -238,8 +241,41 @@
                 </div>
             </div>
         </div>
-        <p>Info here</p>
-        <div class="h-divider"><div class="shadow"></div></div>
+        <br>
+        <p>The idea of this game was inspired by two things: </p>
+        <p> 1) One of the top colony simulation games Rimworld, where you essentially play 'god' and manage a colony of
+            people and the areas resources.
+        </p>
+        <p> 2) My previous project called 5 Year Mission.
+        </p>
+        <p>I wanted to take my learnings from my previous projects and have a completely different experience in a
+            colony sim but with the same level of control (if not slightly simplified) compared to Rimworld, but also
+            wanted to take it in a direction that is currently a popular topic for people but show it in a different
+            light or perspective.
+            To this end, currently with sir Elon stirring the pot about colonization of Mars, I thought what other
+            options are there? This led me to jump into the rabbit hole of Venus. To put it simply I found the concept
+            of living in a sky city fascinating and want to be able to simulate what that might be like. Hence the idea
+            of PROJECT: Venus was born, combining the colony simulation aspect and the current real world craze for
+            colonization of planets but taking it in a direction that hasn't been over saturated yet, Venus.
+        </p>
+        <p>The initial system I wanted to flesh out was the grids, in particular the sky grid where the player would be
+            spending most of their time managing their airships. So to approach this I first wanted to implement grid in
+            Unity and followed with trying take the mouse position to convert to a world position which then would be
+            converted to cell positions (or vice versa). Correct approach me, but what about handling the object
+            placement location and saving where they are on the grid? <s>Well we can first try to get the size of the
+                prefab we would like to place and try to carry that over when the object is being moved or rotated, and
+                then
+                try to use a Boxfill type approach to mark some areas as occupied or not on the grid.</s> Enough of
+            that,
+            instead lets utilize the beauty of a Scriptable Object based database which would hold all the information
+            about the placeable object including it size, avoiding the need to deal with any other nonsense. I found a
+            very informative approach to this through a channel called Sunny Valley Studio on youtube and was able to
+            create my own version of this while also implementing the State Pattern allowing for cleaner code and the
+            state dictating weather to place/delete an object on the grid. I also messed around a lot with shaders and
+            shader graph to be able to use the URP for visual changes/effects to the placement grid system.</p>
+        <div class="h-divider">
+            <div class="shadow"></div>
+        </div>
         <h3>CHUNK SYSTEM</h3>
         <h4>Devlog June 2023</h4>
         <div class="slideshow-container">
@@ -258,8 +294,21 @@
                 </div>
             </div>
         </div>
-        <p>Info here</p>
-        <div class="h-divider"><div class="shadow"></div></div>
+        <br>
+        <p>For chunk generation, this being the ground grid of which the player would eventually be able to extract
+            resources from to keep their sky city afloat, I didn't want the world to be already loaded in, as that could
+            eventually take up a lot of memory and cause lag in the game. To avoid this I pretty much made my own
+            version of Minecraft chunk generation where the game would load the neighboring chunks to the sky grid
+            (which could move left or right now as in the future I wanted wind direction to influence travel) and remove
+            chunks that the skygrid has strayed too far from.</p>
+        <p>The chunks are generated and saved to a list (List < int[,]> Chunks) where each chunk has values representing
+                a different prefab to be placed in that grid position when generated. This can easily be expanded in the
+                future where I am able to create a random chunk generator which will be able to ensure certain resources
+                are available in that chunk, and also allows for chunks to be saved and loaded when the time come to
+                implement saved worlds.</p>
+        <div class="h-divider">
+            <div class="shadow"></div>
+        </div>
         <h3>INTERIOR AIRSHIP SYSTEM</h3>
         <h4>Devlog July 2023</h4>
         <div class="slideshow-container">
@@ -278,11 +327,29 @@
                 </div>
             </div>
         </div>
-        <p>Info here</p>
-        <div class="h-divider"><div class="shadow"></div></div>
+        <br>
+        <p>There comes a point where the concept of KISS (Keep it simple, stupid) is the best way to live life, and this
+            next iteration of this development hammered that in. So until now my airships were nothing serious
+            (placeholders) and the size of them were just varying to ensure that the previous systems were working
+            correctly, but now that I wanted to be able to interact with airships and place objects inside of them and I
+            experimented with the idea of trying to manipulate the sizing of the grid inside the airship to be smaller
+            than the standard skygrid. This ended up just
+            over complicating things and could mean lower quality objects in the future as there is less space for them
+            so lets stick to
+            whole numbers for the grid and maybe make the objects placed themselves smaller.</p>
+        <p>The solution? I call it "The Great Scale Rework" where the size of the sky grid was increased, the cameras
+            adjusted, and all the original airships were excommunicated. I was able to create a new airship which contained a
+            grid
+            for itself and would (hopefully) represent the scale and sizing of all the other airship types to be
+            developed in the future, with each cell in the interior of the ship was a 1x1 space. This would only mean
+            that the prefabs inside would be of the size 0.75x allowing for easier and smoother placement without having
+            to deal with decimal numbers.</p>
+        <div class="h-divider">
+            <div class="shadow"></div>
+        </div>
     </div>
     <footer style="color: white"><a href="https://www.freepik.com/author/upklyak" target="_blank">Background image by
-            upklyak</a></footer>
+            Upklyak</a></footer>
 </body>
 <script>
     let slideIndexDS = 0;
