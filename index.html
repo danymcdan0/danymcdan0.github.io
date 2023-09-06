@@ -11,11 +11,12 @@
 
 <body>
     <div id="particles-js"></div>
-    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div class="center-title">
         <h1 class="blinker">></h1>
-        <h1 class="fading-header" id="Title">Welcome to my Universe.</h1> <!--TODO: Universe sounds a bit cringe - find something better? Like Orbit? -->
+        <h1 class="fading-header" id="Title">Welcome to my Universe.</h1>
+        <!--TODO: Universe sounds a bit cringe - find something better? Like Orbit? -->
     </div>
     <div id="circle-orbit-container">
         <div class="child">
@@ -64,18 +65,18 @@
 
     <div id="MidButtons" class="container">
         <button class="button"
-        style="background-image: url('images/sparta.jpg'); background-size: 350px 225px; background-position: center; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
-            <a href="experience.html" style="text-decoration: none; color: #ffffff;">    
-               <span class="button-text"><span class="blinker" style="font-size: small;">></span>Career</span>
-               <div class="fill-container"></div>
+            style="background-image: url('images/sparta.jpg'); background-size: 350px 225px; background-position: center; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+            <a href="experience.html" style="text-decoration: none; color: #ffffff;">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Career</span>
+                <div class="fill-container"></div>
             </a>
         </button>
         <button class="button"
-        style="background-image: url('images/essex.jpg'); background-size: 300px 300px; background-position: center; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
-        <a href="experience.html" style="text-decoration: none; color: #ffffff;">    
-            <span class="button-text"><span class="blinker" style="font-size: small;">></span>Education</span>
-            <div class="fill-container"></div>
-        </a>
+            style="background-image: url('images/essex.jpg'); background-size: 300px 300px; background-position: center; --fill-color: rgba(0, 120, 255, 0.5); --border-color: rgb(0, 120, 255);">
+            <a href="experience.html" style="text-decoration: none; color: #ffffff;">
+                <span class="button-text"><span class="blinker" style="font-size: small;">></span>Education</span>
+                <div class="fill-container"></div>
+            </a>
         </button>
     </div>
 
@@ -95,27 +96,27 @@
             </a>
         </button>
     </div>
-</div>
+    </div>
 </body>
 <script>
-    
+
     function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var image = getRndInteger(1,4);
+    var image = getRndInteger(1, 4);
 
     if (image == 1) {
-        document.getElementById("logo").src ="images/Duck Logo.png";
+        document.getElementById("logo").src = "images/Duck Logo.png";
     }
     else if (image == 2) {
-        document.getElementById("logo").src ="images/Dragon Logo.png";
+        document.getElementById("logo").src = "images/Dragon Logo.png";
     }
     else if (image == 3) {
-        document.getElementById("logo").src ="images/Volleyball Logo.png";
+        document.getElementById("logo").src = "images/Volleyball Logo.png";
     }
     else if (image == 4) {
-        document.getElementById("logo").src ="images/Draft Logo.png";
+        document.getElementById("logo").src = "images/Draft Logo.png";
     }
 
     const innerButtons = document.getElementById("InnerButtons");
@@ -175,7 +176,7 @@
     const title = document.getElementById("Title");
     var busy = 0;
     function planetMouseOver(element, text) {
-        if(text.innerHTML == "My Universe." && title.innerHTML == "My Universe.") {
+        if (text.innerHTML == "My Universe." && title.innerHTML == "My Universe.") {
             return;
         }
         if (busy == 0) {
@@ -205,7 +206,7 @@
         }
     }
 
-    let inactivityTime = function() {
+    let inactivityTime = function () {
         let time;
         window.onload = resetTimer;
         document.onmousemove = resetTimer;
@@ -213,38 +214,70 @@
             planetMouseOver(this, "My Universe.")
         }
         function resetTimer() {
-          clearTimeout(time);
-          time = setTimeout(resetTitle, 5000)
+            clearTimeout(time);
+            time = setTimeout(resetTitle, 5000)
         }
-      };
-      window.onload = function() {
+    };
+    window.onload = function () {
         inactivityTime();
-      }
+    }
 
 
 
-    particlesJS("particles-js", { "particles": { "number": { 
-        "value": 40, "density": { "enable": true, "value_area": 800 } }, 
-        "color": { "value": ["#FFFFFF","#D6ABFF", "#FFFFFF"] }, "shape": { "type": "circle", "stroke": { 
-        "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 } }, "opacity": { 
-        "value": 0.5, "random": false, "anim": { 
-        "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, 
-        "size": { "value": 3, "random": true, "anim": {
-        "enable": false, "speed": 40, "size_min": 0.1, "sync": false } },
-        "line_linked": { "enable": true, "distance": 175, "color": "#3FFFF0", 
-        "opacity": 0.1, "width": 1 }, "move": { "enable": true, "speed": 1, 
-        "direction": "top", "random": true, "straight": true, "out_mode": "out", 
-        "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, 
-        "interactivity": { "detect_on": "canvas", "events": { "onhover": { 
-        "enable": true, "mode": "bubble" }, "onclick": { "enable": false, 
-        "mode": "push" }, "resize": true }, "modes": { "grab": { 
-        "distance": 400, "line_linked": { "opacity": 1 } }, 
-        "bubble": { "distance": 400, "size": 3, "duration": 2, 
-        "opacity": 0.9, "speed": 3 }, "repulse": { "distance": 1, 
-        "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": 
-        { "particles_nb": 2 } } }, "retina_detect": true }); 
-        update = function () { requestAnimationFrame(update); }; 
-        requestAnimationFrame(update);
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 40, "density": { "enable": true, "value_area": 800 }
+            },
+            "color": { "value": ["#FFFFFF", "#D6ABFF", "#FFFFFF"] }, "shape": {
+                "type": "circle", "stroke": {
+                    "width": 0, "color": "#000000"
+                }, "polygon": { "nb_sides": 5 }
+            }, "opacity": {
+                "value": 0.5, "random": false, "anim": {
+                    "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false
+                }
+            },
+            "size": {
+                "value": 3, "random": true, "anim": {
+                    "enable": false, "speed": 40, "size_min": 0.1, "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true, "distance": 175, "color": "#3FFFF0",
+                "opacity": 0.1, "width": 1
+            }, "move": {
+                "enable": true, "speed": 1,
+                "direction": "top", "random": true, "straight": true, "out_mode": "out",
+                "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas", "events": {
+                "onhover": {
+                    "enable": true, "mode": "bubble"
+                }, "onclick": {
+                    "enable": false,
+                    "mode": "push"
+                }, "resize": true
+            }, "modes": {
+                "grab": {
+                    "distance": 400, "line_linked": { "opacity": 1 }
+                },
+                "bubble": {
+                    "distance": 400, "size": 3, "duration": 2,
+                    "opacity": 0.9, "speed": 3
+                }, "repulse": {
+                    "distance": 1,
+                    "duration": 0.4
+                }, "push": { "particles_nb": 4 }, "remove":
+                    { "particles_nb": 2 }
+            }
+        }, "retina_detect": true
+    });
+    update = function () { requestAnimationFrame(update); };
+    requestAnimationFrame(update);
 
 </script>
+
 </html>
