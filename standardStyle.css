@@ -243,6 +243,14 @@ footer a{
   height: 400px;
 }
 
+.slide-image-s {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 400px;
+}
+
 .caption-area {
   color: #f2f2f2;
   font-size: 15px;
