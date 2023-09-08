@@ -58,9 +58,6 @@ body {
   justify-content: center;
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-columns: auto auto;
-  grid-template-columns: auto auto;
-  /* grid-template-rows: repeat(3,50px); */
 }
 
 .inner-orbit-circles-s {
