@@ -1,23 +1,24 @@
 /* ---------- General ---------- */
 body {
-    margin: 0%;
-    animation: fadeIn ease 5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 40%, rgba(47,45,43,1) 50%, rgba(0,0,0,1) 60%);
-  }
+  margin: 0%;
+  animation: fadeIn ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 40%, rgba(47, 45, 43, 1) 50%, rgba(0, 0, 0, 1) 60%);
+}
 
 
 .center-title {
-  top: 50px;    
+  top: 50px;
   margin: auto;
   text-align: center;
   z-index: 2;
   position: relative;
-  }
+}
 
-.fading-header, .blinker {
+.fading-header,
+.blinker {
   display: inline;
   font-family: 'Oxanium', cursive;
   color: white;
@@ -29,7 +30,7 @@ body {
 }
 
 .instruct {
-  top: 150px;    
+  top: 150px;
   margin: auto;
   text-align: center;
   z-index: 2;
@@ -43,7 +44,7 @@ body {
   font-size: 20px;
 }
 
-.instruct-label  {
+.instruct-label {
   padding-bottom: 10%;
   font-family: 'Oxanium', cursive;
   color: white;
@@ -52,8 +53,7 @@ body {
   padding-bottom: 10px;
 }
 
-.grid
- {
+.grid {
   padding-top: 10px;
   justify-content: center;
   display: grid;
@@ -104,264 +104,290 @@ body {
   height: 500px;
   width: 500px;
   z-index: 9999;
-  }
+}
 
-  img  {
-    position: absolute;
-    width: auto;
-    height: auto;
-    min-height: 128px;
-    min-width: 128px;
-    top: 80px;
-    left: 80px;
-    image-rendering: pixelated;
-  }
+img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  min-height: 128px;
+  min-width: 128px;
+  top: 80px;
+  left: 80px;
+  image-rendering: pixelated;
+}
 
-  .child {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 25%;
-    left: 25%;
-    margin: -25px 0 0 -25px; 
-  }
-  
-  #inner-orbit, #inner-orbit-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 294px;
-    height: 294px;
-    z-index: 3;
-  }
+.child {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  margin: -25px 0 0 -25px;
+}
 
-  #inner-orbit {
-    -webkit-animation: orbit 15s linear infinite;
-    animation: orbit 15s linear infinite;
-  }
+#inner-orbit,
+#inner-orbit-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 294px;
+  height: 294px;
+  z-index: 3;
+}
 
-  #inner-orbit-ring {
-    border: 2px var(--ring-color) solid;
-    border-radius: 100%;
-    -webkit-animation: orbit-fade 15s linear infinite;
-    animation: orbit-fade 15s linear infinite;
-  }
-  
-  .inner-orbit-circles {
-    position: absolute;
-    opacity: 100;
-    top: 140px;
-    left: -20px;
-    height: 45px;
-    width: 45px;
-    border-radius: 100%;
-    background: radial-gradient(circle at 20% 75%, #fcd467, #c9ab49 20%, #473610 80%, #c58a0b 100%);
-    z-index: 3;
-  }
+#inner-orbit {
+  -webkit-animation: orbit 15s linear infinite;
+  animation: orbit 15s linear infinite;
+}
 
-  .inner-orbit-circles:hover, .outer-orbit-circles:hover, .middle-orbit-circles:hover {
-    box-shadow:
+#inner-orbit-ring {
+  border: 2px var(--ring-color) solid;
+  border-radius: 100%;
+  -webkit-animation: orbit-fade 15s linear infinite;
+  animation: orbit-fade 15s linear infinite;
+}
+
+.inner-orbit-circles {
+  position: absolute;
+  opacity: 100;
+  top: 140px;
+  left: -20px;
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  background: radial-gradient(circle at 20% 75%, #fcd467, #c9ab49 20%, #473610 80%, #c58a0b 100%);
+  z-index: 3;
+}
+
+.inner-orbit-circles:hover,
+.outer-orbit-circles:hover,
+.middle-orbit-circles:hover {
+  box-shadow:
     0 0 50px #fff,
     -10px 0 80px #f0f,
     10px 0 80px #0ff;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  #middle-orbit, #middle-orbit-ring {
-    position: absolute;
-    top: -49px;
-    left: -49px;
-    width: 392px;
-    height: 392px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#middle-orbit,
+#middle-orbit-ring {
+  position: absolute;
+  top: -49px;
+  left: -49px;
+  width: 392px;
+  height: 392px;
+  z-index: 2;
+}
+
+#middle-orbit {
+  -webkit-animation: orbit 18s linear infinite;
+  animation: orbit 18s linear infinite;
+}
+
+#middle-orbit-ring {
+  border: 2px var(--ring-color) solid;
+  border-radius: 100%;
+  -webkit-animation: orbit-fade 18s linear infinite;
+  animation: orbit-fade 18s linear infinite;
+}
+
+.middle-orbit-circles {
+  position: absolute;
+  top: 33px;
+  left: 315px;
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  background: radial-gradient(circle at 10% 75%, #4ea547, #44964a 20%, #153d6e 80%, #619cff 100%);
+  z-index: 2;
+}
+
+#outer-orbit,
+#outer-orbit-ring {
+  position: absolute;
+  top: -98px;
+  left: -98px;
+  width: 490px;
+  height: 490px;
+  z-index: 1;
+}
+
+#outer-orbit {
+  -webkit-animation: orbit 37.5s linear infinite;
+  animation: orbit 37.5s linear infinite;
+}
+
+#outer-orbit-ring {
+  border: 2px var(--ring-color) solid;
+  border-radius: 100%;
+  -webkit-animation: orbit-fade 37.5s linear infinite;
+  animation: orbit-fade 37.5s linear infinite;
+}
+
+.outer-orbit-circles {
+  position: absolute;
+  top: 5px;
+  left: 125px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: radial-gradient(circle at 10% 75%, #eeae3a, #dd893e 20%, #943105 80%, #452a06 100%);
+  border-color: #fff;
+  z-index: 1;
+}
+
+/* ---------- Buttons ---------- */
+:root {
+  --fill-color: rgba(255, 255, 255, 0.377);
+  --border-color: rgb(255, 255, 255);
+}
+
+.container {
+  margin-top: 125px;
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.buttonInfo {
+  padding: 10px 75px;
+  background-color: transparent;
+  font-family: 'Oxanium', cursive;
+  color: #ffffff;
+  border: solid 2px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white,
+      black);
+
+  .button-text {
+    padding: 10%;
+    border-radius: 6px;
     z-index: 2;
   }
 
-  #middle-orbit {
-    -webkit-animation: orbit 18s linear infinite;
-    animation: orbit 18s linear infinite;
-  }
-  
-  #middle-orbit-ring {
-    border: 2px var(--ring-color) solid;
-    border-radius: 100%;
-    -webkit-animation: orbit-fade 18s linear infinite;
-    animation: orbit-fade 18s linear infinite;
-  }
-  
-  .middle-orbit-circles {
-    position: absolute;
-    top: 33px;
-    left: 315px;
-    height: 45px;
-    width: 45px;
-    border-radius: 100%;
-    background: radial-gradient(circle at 10% 75%, #4ea547, #44964a 20%, #153d6e 80%, #619cff 100%);
-    z-index: 2;
-  }
-  
-  #outer-orbit, #outer-orbit-ring {
-    position: absolute;
-    top: -98px;
-    left: -98px;
-    width: 490px;
-    height: 490px;
-    z-index: 1;
-  }
+}
 
-  #outer-orbit {
-    -webkit-animation: orbit 37.5s linear infinite;
-    animation: orbit 37.5s linear infinite;
-  }
+.button {
+  position: relative;
+  padding: 64px 128px;
+  border-radius: 100vw;
+  background-color: transparent;
+  font-family: 'Oxanium', cursive;
+  color: #ffffff;
+  /*Text color*/
+  border: solid 2px rgba(255, 255, 255, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  -webkit-mask-image: -webkit-radial-gradient(white,
+      black);
 
-  #outer-orbit-ring {
-    border: 2px var(--ring-color) solid;
-    border-radius: 100%;
-    -webkit-animation: orbit-fade 37.5s linear infinite;
-    animation: orbit-fade 37.5s linear infinite;
-  }
-  
-  .outer-orbit-circles {
-    position: absolute;
-    top: 5px;
-    left: 125px;
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    background: radial-gradient(circle at 10% 75%, #eeae3a, #dd893e 20%, #943105 80%, #452a06 100%);
-    border-color: #fff;
-    z-index: 1;
-  }
 
-  /* ---------- Buttons ---------- */
-  :root {
-    --fill-color: rgba(255, 255, 255, 0.377);
-    --border-color: rgb(255, 255, 255);
-  }
-
-  .container {
-    margin-top: 125px;
-    width: 100%;
-    min-height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-
-  .button {
+  .button-text {
     position: relative;
-    padding: 64px 128px;
-    border-radius: 100vw;
-    background-color: transparent;
-    font-family: 'Oxanium', cursive;
-    color: #ffffff; /*Text color*/
-    border: solid 2px rgba(255, 255, 255, 0.3);
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    -webkit-mask-image: -webkit-radial-gradient(
-      white,
-      black
-    );
-  
-    .button-text {
-      position: relative;
-      padding: 10%;
-      background-color: rgba(0, 0, 0, 0.75);
-      border-radius: 6px;
-      z-index: 2;
-      text-decoration: none;
-    }
-  
-    .fill-container {
+    padding: 10%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 6px;
+    z-index: 2;
+    text-decoration: none;
+  }
+
+  .fill-container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    transform: translateY(-50%) rotate(180deg);
+
+    &::after {
+      content: "";
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 0;
       width: 100%;
-      padding-bottom: 100%;
-      transform: translateY(-50%) rotate(180deg);
-  
+      height: 100%;
+      background-color: var(--fill-color);
+      border-radius: 50%;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: translateY(-100%);
+    }
+  }
+
+  &:hover {
+    border-color: var(--border-color);
+    transform: translateY(-4px);
+
+    .fill-container {
+      transform: translateY(-50%) rotate(0);
+
       &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--fill-color);
-        border-radius: 50%;
-        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        transform: translateY(-100%);
-      }
-    }
-  
-    &:hover {
-      border-color: var(--border-color);
-      transform: translateY(-4px);
-  
-      .fill-container {
-        transform: translateY(-50%) rotate(0);
-  
-        &::after {
-          transform: translateY(0);
-        }
+        transform: translateY(0);
       }
     }
   }
+}
 
-  /* ---------- Animation ---------- */
-  @keyframes orbit {
-    100% {
-      -webkit-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
+/* ---------- Animation ---------- */
+@keyframes orbit {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-fade {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 
-  @keyframes orbit-fade {
-    100% {
-      -webkit-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-    50% {
-      opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
+  100% {
+    opacity: 1;
   }
+}
 
-  @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-  }
+/* ---------- Particles.js ---------- */
 
-  /* ---------- Particles.js ---------- */
+canvas {
+  display: block;
+  vertical-align: top;
+}
 
-  canvas{ 
-    display: block; 
-    vertical-align: top; 
-  } 
-
-  #particles-js{ 
-    position:absolute; 
-    width: 100%; height: 100%; 
-    background: rgb(48,48,51);
-    background: radial-gradient(circle, rgba(48,48,51,1) 0%, rgba(0,0,0,1) 50%);
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-position: 50% 50%; 
-  }
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(48, 48, 51);
+  background: radial-gradient(circle, rgba(48, 48, 51, 1) 0%, rgba(0, 0, 0, 1) 50%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
